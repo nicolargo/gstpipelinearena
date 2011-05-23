@@ -1,0 +1,1 @@
+gst-launch -tv ssim name=ssim ssim.src0 ! ffmpegcolorspace ! autovideosink filesrc location="../../videos/webcam-lossless.avi" ! decodebin2 ! ssim.original filesrc location="../../videos/webcam-lossless.mp4" ! decodebin2 ! ssim.modified0

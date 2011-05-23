@@ -1,0 +1,70 @@
+GStreamer pipelines arena
+=========================
+
+A simple place where i put my GStreamer's pipelines.
+Have fun...
+
+audiocodectest.sh: 		Audio codec / quality
+audio-noise-reduction.sh:	Audio noise reduction
+audio-rcv-aac.sh:		Receive and play an AAC audio flow RTP/UDP (send by audio-snd-aac.sh)
+audio-rcv-alaw.sh:		Receive and play an ALAW audio flow RTP/UDP (send by audio-snd-alaw.sh)
+audio-rcv-gsm.sh:		Receive and play a GSM audio flow RTP/UDP (send by audio-snd-gsm.sh)
+audio-rcv-mp3.sh:		Receive and play a MP3 audio flow UDP (send by audio-snd-mp3.sh)
+audio-rcv-vorbis.sh:		Receive and play a VORBIS audio flow RTP/UDP (send by audio-snd-mp3.sh)
+audio-relay-aac.sh:		Relaw AAC UDP flow from snd to rcv
+audio-relay-alaw.sh:		Relaw AAC RTP/UDP flow from snd to rcv
+audio-rcv-aac.sh:		Read (from test file) and send an AAC audio flow RTP/UDP
+audio-rcv-alaw.sh:		Read (from test file) and send an ALAW audio flow RTP/UDP
+audio-rcv-gsm.sh:		Read (from test file) and send a GSM audio flow RTP/UDP
+audio-rcv-mp3.sh:		Read (from test file) and send a MP3 audio flow UDP
+audio-rcv-vorbis.sh:		Read (from test file) and send a VORBIS audio flow RTP/UDP
+clientaudiortpg726.sh:		Receive and play a G727 audio flow RTP/UDP
+clientaudiortpgsm.sh:		Receive and play a GSM audio flow RTP/UDP
+clientaudiortpspeex.sh:		Receive and play a SPEEX audio flow RTP/UDP
+clientaudiotcp.sh:		Stream a audio file (using TCP)
+clientvideortph263p.sh:		Receive and display a H263+ video flow RTP/UDP
+clientvideortpmpeg4.sh:		Receive and display a MPEG4 video flow RTP/UDP
+clientvideortpmsmpeg4.sh:	Receive and display a MS-MPEG4 video flow RTP/UDP
+clientvideortptheora.sh:	Receive and display a THEORA video flow RTP/UDP
+clientvideortpx264.sh:		Receive and display a X264 (H.264) video flow RTP/UDP
+dailymotion.sh:			Download a video from Daily Motion and display it
+linux-client-x264-stream.sh:	Test X.264 parameters
+livetestvideoencoder.sh:	Live test to compare video before and after MPEG4 compression 
+mp4encoder.sh:			A simple but complete script to transcode a video file to .MP4 (MPEG4 / AAC)			
+oggencoder.sh:			A simple but complete script to transcode a video file to .OGG (VORBIS / THEORA)
+recordwebcam.sh:		Capture Webcam (1 fps) / Display AND encode in a .OGG file (video surveillance...)
+recv3dlowdelay.sh:		Receive and display a stereo video (3D display)
+recvlowdelay.sh:		Try to reduce the latency when receive and display a video
+recv-mpeg4-alaw.sh:		Receive and display/play a video+audio RTP/UDP stream (MPEG4 / ALAW)
+recv-mpeg4-celt.sh:		Receive and display/play a video+audio RTP/UDP stream (MPEG4 / CELT)
+recv-mpeg4.sh:			Receive and display a video RTP/UDP stream (MPEG4)
+recv-mpeg4-vorbis.sh:		Receive and display/play a video+audio RTP/UDP stream (MPEG4 / VORBIS)
+recv-x264.sh:			Receive and display a video RTP/UDP stream (H.264)
+rtcpclient.sh:			RTCP Client/receiver (H.264/SPEEX)
+rtcpserver.sh:			RTCP Server/sender (H.264/SPEEX)
+send3dlowdelay.sh:		Send a stereo video (3D display)
+sendlowdelay.sh:		Try to reduce the latency when a video flow is sent
+serveraudiortpg726.sh:		Stream an audio using RTP/UDP and G.726 codec
+serveraudiortpgsm.sh:		Stream an audio using RTP/UDP and GSM codec
+serveraudiortpspeex.sh:		Stream an audio using RTP/UDP and SPEEX codec
+serveraudiotcp.sh:		Receive and play a RTP/TCP audio flow
+servervideortph263p.sh:		Stream Webcam using a RTP/UDP and H263+ video codec
+servervideortpmpeg4.sh:		Stream Webcam using a RTP/UDP and MPEG4 video codec
+servervideortpmsmpeg4.sh:	Stream Webcam using a RTP/UDP and MS-MPEG4 video codec
+servervideortptheora.sh:	Stream Webcam using a RTP/UDP and THEORA video codec
+servervideortpx264.sh:		Stream Webcam using a RTP/UDP and H.264 (X.264) video codec
+servervideoudpmpeg4.sh:		Stream Webcam using a UDP and MPEG4 video codec
+servervideoudprv20.sh:		Stream Webcam using a UDP and RV2.0 video codec
+servervideoudptheora.sh:	Stream Webcam using a UDP and THEORA video codec
+servervideovp8.sh:		End to end VP8 encoding/decoding test
+tcpclientreceive.sh:		Receive and display a TCP/RTP video (H.264) flow
+tcpclientsend.sh		Stream a TCP/RTP video (H.264) flow
+tcpserverreceive.sh:		Receive and display a TCP/RTP video (H.264) flow
+tcpserverrelay.sh:		Make a TCP relay between two machines
+tcpserversend.sh:		Stream a TCP/RTP video (H.264) flow
+testaudioflac.sh:		Test HQ audio encoder (FLAC)
+testaudio.sh:			Some audio test (amplification, mix...)
+testwebcam.sh:			Test Webcam and video change (color, saturation...)
+video-ssim.sh:			Test SSIM video quality plugin
+videotest.sh:			Test X.264 (H.264) video codec with differents bitrate
+webmencoder.sh:			A simple but complete script to transcode a video file to .WEBM (VP8 / VORBIS)

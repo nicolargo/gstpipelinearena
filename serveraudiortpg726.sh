@@ -1,0 +1,3 @@
+# Not work...
+
+gst-launch -v filesrc location=./samples/unnatural.mp3 ! mad ! audioconvert ! audioresample ! "audio/x-raw-int,rate=8000,width=16,depth=16,channels=1,endianness=1234,signed=true" ! ffenc_g726 bitrate=50000 ! rtpg726pay ! udpsink port=6969 
