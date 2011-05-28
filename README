@@ -8,15 +8,21 @@ audiocodectest.sh: 		Audio codec / quality
 audio-noise-reduction.sh:	Audio noise reduction
 audio-rcv-aac.sh:		Receive and play an AAC audio flow RTP/UDP (send by audio-snd-aac.sh)
 audio-rcv-alaw.sh:		Receive and play an ALAW audio flow RTP/UDP (send by audio-snd-alaw.sh)
+audio-rcv-amr.sh:		Receive and play an AMR audio flow RTP/UDP (send by audio-snd-amr.sh)
+audio-rcv-celt.sh:		Receive and play an CELT audio flow RTP/UDP (send by audio-snd-celt.sh)
 audio-rcv-gsm.sh:		Receive and play a GSM audio flow RTP/UDP (send by audio-snd-gsm.sh)
 audio-rcv-mp3.sh:		Receive and play a MP3 audio flow UDP (send by audio-snd-mp3.sh)
+audio-rcv-speex.sh:		Receive and play a SPEEX audio flow RTP/UDP (send by audio-snd-speex.sh)
 audio-rcv-vorbis.sh:		Receive and play a VORBIS audio flow RTP/UDP (send by audio-snd-mp3.sh)
 audio-relay-aac.sh:		Relaw AAC UDP flow from snd to rcv
 audio-relay-alaw.sh:		Relaw AAC RTP/UDP flow from snd to rcv
 audio-rcv-aac.sh:		Read (from test file) and send an AAC audio flow RTP/UDP
 audio-rcv-alaw.sh:		Read (from test file) and send an ALAW audio flow RTP/UDP
+audio-rcv-amr.sh:		Read (from test file) and send an AMR audio flow RTP/UDP
+audio-rcv-celt.sh:		Read (from test file) and send an CELT audio flow RTP/UDP
 audio-rcv-gsm.sh:		Read (from test file) and send a GSM audio flow RTP/UDP
 audio-rcv-mp3.sh:		Read (from test file) and send a MP3 audio flow UDP
+audio-rcv-speex.sh:		Read (from test file) and send a Speex audio flow RTP/UDP
 audio-rcv-vorbis.sh:		Read (from test file) and send a VORBIS audio flow RTP/UDP
 clientaudiortpg726.sh:		Receive and play a G727 audio flow RTP/UDP
 clientaudiortpgsm.sh:		Receive and play a GSM audio flow RTP/UDP
@@ -29,8 +35,8 @@ clientvideortptheora.sh:	Receive and display a THEORA video flow RTP/UDP
 clientvideortpx264.sh:		Receive and display a X264 (H.264) video flow RTP/UDP
 dailymotion.sh:			Download a video from Daily Motion and display it
 linux-client-x264-stream.sh:	Test X.264 parameters
-livetestvideoencoder.sh:	Live test to compare video before and after MPEG4 compression 
-mp4encoder.sh:			A simple but complete script to transcode a video file to .MP4 (MPEG4 / AAC)			
+livetestvideoencoder.sh:	Live test to compare video before and after MPEG4 compression
+mp4encoder.sh:			A simple but complete script to transcode a video file to .MP4 (MPEG4 / AAC)
 oggencoder.sh:			A simple but complete script to transcode a video file to .OGG (VORBIS / THEORA)
 recordwebcam.sh:		Capture Webcam (1 fps) / Display AND encode in a .OGG file (video surveillance...)
 recv3dlowdelay.sh:		Receive and display a stereo video (3D display)

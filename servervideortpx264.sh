@@ -1,25 +1,46 @@
 #!/bin/sh
 # Send video (Webcam) to server with RTP/X.264
 
-IPCLIENT=$1
-PORTCLIENT=5000
+IPCLIENT=${1-"127.0.0.1"}
+PORTCLIENT=${2-"5000"}
+LATENCY=${3-"200"}
 
-WEBCAM_DEV="/dev/video0"
-WEBCAM_WIDTH=352
-WEBCAM_HEIGHT=288
-WEBCAM_FPS=24
+ENCODER="x264enc"
+PAYLOADER="rtph264pay config-interval=3"
 
-X264_BITRATE=600
-X264_PARAM="byte-stream=true bframes=4 ref=4 me=hex subme=4 weightb=true threads=0"
-RTP_CONFIG_INTERVAL=5
+VIDEOSRC="autovideosrc"
+VIDEOCAPS="video/x-raw-yuv,width=352,height=288,framerate=10/1"
+BITRATE=160
+ENCODER_OPT="bitrate=$BITRATE byte-stream=true bframes=4 ref=4 me=hex subme=4 weightb=true threads=0"
+
+gst-launch -tv \
+	gstrtpbin name=rtpbin latency=$LATENCY buffer-mode=0 \
+		$VIDEOSRC \
+		! queue ! videoscale method=1 ! videorate ! $VIDEOCAPS \
+		! tee name="display" \
+			! queue ! cairotextoverlay text="$ENCODER $BITRATE" shaded-background=true \
+			! queue ! $ENCODER $ENCODER_OPT \
+			! $PAYLOADER \
+			! rtpbin.send_rtp_sink_0 rtpbin.send_rtp_src_0 \
+			! udpsink port=$PORTCLIENT host=$IPCLIENT sync=false async=false \
+		display. \
+			! queue ! cairotextoverlay text="Source" shaded-background=true \
+			! autovideosink
+
+	
+##################
+# OTHERS PIPELINES
+##################
+
+exit
 
 gst-launch -tv --gst-debug-level=2 \
-	v4l2src device=$WEBCAM_DEV \
-	! queue ! videoscale method=1 ! video/x-raw-yuv,width=$WEBCAM_WIDTH,height=$WEBCAM_HEIGHT \
-	! queue ! videorate ! video/x-raw-yuv,framerate=$WEBCAM_FPS/1 \
-	! queue ! x264enc bitrate=$X264_BITRATE $X264_PARAM ! rtph264pay config-interval=$RTP_CONFIG_INTERVAL \
+	$VIDEOSRC ! ffmpegcolorspace \
+	! queue ! videoscale method=1 ! videorate ! $VIDEOCAPS \
+	! queue ! x264enc $ENCODER_OPT ! rtph264pay config-interval=$RTP_CONFIG_INTERVAL \
 	! queue ! udpsink port=$PORTCLIENT host=$IPCLIENT sync=false async=false 
-	
+
+
 # PROFILS
 
 #-----------------------------------------------------------------------------
